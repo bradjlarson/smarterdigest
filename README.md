@@ -13,8 +13,10 @@ The primary classification engine is a modified version of (https://github.com/d
 I've added a second classification engine that is a modified version of (https://github.com/dchest/pybayesantispam) to connect to my database and save the predictions. 
 Finally, I've added a third classification engine, a python interface to CRM114 (http://crm114.sourceforge.net/ and http://www.elegantchaos.com/node/129).
 
-I used project for over a month, classifying over 1000 articles and capturing the predictions for each. The engine worked pretty well for articles it thought I would dislike, with the primary classification being 85% accurate. The likes were less accurate - around 60%.
+I used project for over a month, classifying over 1000 articles and capturing the predictions for each. The engine worked pretty well for articles it thought I would dislike, with the primary classification being 85% accurate. The likes were less accurate - around 60%. The engine learns pretty quickly - I ranked 30 articles before predictions started kicking in, and the accuracy quickly reached 85%/60% and then plateaued.
 
 However, when I used all three methods, I was able to get the accuracy up to ~93% for the dislikes and ~73% for the likes. 
+
+I plan on integrating a popover walkthrough like intro.js soon, but haven't yet. On the site, you can rank articles, star articles, and clicking on the title shows the plain text of the article. Once you've classified 20 articles, reload the page and predictions should kick in. 
 
 Right now I'm working on converting the frontend to Meteor.js for more rapid development, and then I'd like to add some sort of latent semantic indexing/analysis to try and improve the predictions even further. I'm also looking to add the ability to have multiple RSS feeds. 
