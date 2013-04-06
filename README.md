@@ -1,7 +1,7 @@
 smarterdigest
 =============
 
-Predictive RSS
+Predictive RSS - available at smarterdigest.com
 
 This project uses bayesian classification to predict which articles I'll like based on the articles I've read and tagged in the past. 
 
