@@ -1,0 +1,102 @@
+@font-face
+{
+font-family: Lato;
+src: url('../fonts/Lato/Lato-Black.ttf');
+}
+html, body
+{
+margin:0;
+padding 0;
+}
+div
+{
+font-family: Lato;
+}
+p
+{
+font-family: Lato;
+text-align:center;
+}
+a
+{
+font-family: Lato;
+text-align:center;	
+}
+h3
+{
+font-family: Lato;
+text-align:center;		
+}
+h2
+{
+font-family: Lato;
+text-align:center;		
+}
+#splash_screen
+{
+width:1000px;	
+margin: auto;	
+}
+#logo
+{
+width:1000px;
+clear:left,right;	
+}
+#welcome
+{
+margin-top:100px;
+width:1000px;
+clear:left,right;
+}
+#options_container
+{
+width:1000px;
+clear:left,right;
+overflow:hidden;
+}
+#create_account
+{
+float:left;
+clear:left;
+width:500px;
+overflow:hidden;
+}
+#create_account_text
+{
+	width:400px;
+	margin-left:50px;
+	margin-right:50px;
+	text-decoration:underline;
+}
+#create_account_form
+{
+	width:400px;
+	margin-left:50px;
+	margin-right:50px;
+	overflow:hidden;
+}
+#login
+{
+	float:right;
+	width:500px;
+	overflow:hidden;
+	clear:right;
+}
+#login_text
+{
+	width:400px;
+	padding-left:50px;
+	padding-right:50px;
+	text-decoration:underline;
+}
+#login_form
+{
+	width:400px;
+	padding-left:50px;
+	padding-right:50px;
+	overflow:hidden;
+}
+.submit
+{
+width:400px;
+}

@@ -1,0 +1,4 @@
+/* CSS declarations go here */
+body { padding:40px; }
+#feed { list-style-type: none; padding: 0; margin: 0;}
+#sidebar { padding-top: 10px;}

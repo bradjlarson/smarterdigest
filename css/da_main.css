@@ -1,0 +1,150 @@
+@font-face
+{
+font-family: Lato;
+src: url('../fonts/Lato/Lato-Black.ttf');
+}
+div
+{
+text-align:center;
+font-family: Lato;
+}
+p
+{
+font-family: Lato;
+text-align:center;
+}
+a
+{
+font-family: Lato;
+text-align:center;
+}
+option
+{
+font-family: Lato;
+}
+#site
+{
+width:1000px;
+height:650px;
+}
+#top
+{
+width:1000px;
+height:50px;
+}
+#logo
+{
+margin:auto;
+float:left;
+width:300px;
+height:50px;
+}
+#login
+{
+float:right;
+width:400px;
+height:50px;
+margin:auto;
+}
+#main
+{
+}
+#options
+{
+border-right:5px solid black;
+border-top:5px solid black;
+float:left;
+width:195px;
+height:400px;
+}
+#content
+{
+border-top: 5px solid black;
+float:left;
+width:800px;
+height:400px;
+}
+#form
+{
+float:left;
+width:300px;
+height:400px;
+}
+#form_options
+{
+float:left;
+border-bottom:1px solid black;
+height:49px;
+width:300px;
+}
+#form_opt1
+{
+float:left;
+width:150px;
+height:49px;
+}
+#form_opt2
+{
+border-left:1px solid black;
+float:left;
+width:149px;
+height:49px;
+}
+#form_body
+{
+float:left;
+margin-top:50px;
+width:299px;
+height:350px;
+}
+#preview
+{
+float:left;
+border-left:1px solid black;
+width:499px;
+height:400px;
+}
+#preview_title
+{
+float:left;
+height:49px;
+width:499px;
+border-bottom:1px solid black;
+}
+#preview_body
+{
+float:left;
+height:300px;
+width:499px;
+}
+#preview_submit
+{
+float:left;
+height:50px;
+width:499px;
+}
+.slide
+{
+font-family: Lato;
+border-bottom: 1px solid black;
+overflow:hidden;
+}
+.slide_number
+{
+float:right;
+border-left:1px solid black;
+padding-left:10px;
+padding-right:10px;	
+}
+.slide_settings
+{
+float:right;
+border-left :1px solid black;
+padding-left:10px;
+padding-right:10px;
+}
+.slide_status
+{
+float:right;
+padding-right:10px;
+}

@@ -1,0 +1,116 @@
+<head>
+  <title>SmarterDigest</title>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      {{> navbar}}
+    </div>
+	<div id="site_container" class="container-fluid">
+		<div class="row-fluid">
+			{{> sidebar}}
+			{{> feed}}
+		</div>
+	</div>	
+</body>
+<template name="navbar">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+          	</button>
+          	<a class="brand" href="#">SmarterDigest</a>
+          	<div class="nav-collapse collapse">
+            	<p class="navbar-text pull-right">
+              		Welcome, <a href="#" class="navbar-link">{{username}}</a>
+            	</p>
+            	<ul class="nav">
+              		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Queue info <b class="caret"></b></a></li>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Articles in Queue: {{num_articles}}</a></li>
+							<li><a href="#"># Worth it: {{num_like}}</a></li>
+							<li><a href="#"># Not worth it: {{num_dislike}}</a><li>
+						</ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Feed stats <b class="caret"></b></a></li>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Overall prediction accuracy: {{acc_overall}}</a></li>
+							<li><a href="#">Worth it accuracy: {{acc_dislike}}</a></li>
+							<li><a href="#"># Not worth it accuracy: {{acc_like}}</a><li>
+							<li id="all_read"><a href="#">Articles read: {{num_read}}</a></li>
+							<li id="all_liked"><a href="#">Articles worth it: {{num_liked}}</a></li>
+							<li id="all_disliked"><a href="#">Articles not worth it: {{num_disliked}}</a><li>
+							<li id="all_ignored"><a href="#">Articles ignored: {{num_ignored}}</a><li>
+							<li id="all_starred"><a href="#">Articles starred: {{num_starred}}</a><li>
+						</ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Feed options <b class="caret"></b></a></li>
+						<ul class="dropdown-menu" role="menu">
+							<li id="most_recent"><a href="#">Show 30 most recent articles</a></li>
+							<li id="current_view"><a href="#"></a>Show current view of {{feed_name}}</li>
+							<li id="only_likes"><a href="#">Only show "Worth it" articles</a><li>
+						</ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account options <b class="caret"></b></a></li>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Change email</a></li>
+							<li><a href="#">Change password</a></li>
+							<li><a href="#">Delete account</a><li>
+						</ul>
+					</li>
+              		<li><a href="#about">Log out</a></li>
+            	</ul>
+          	</div><!--/.nav-collapse -->
+        </div>
+	</div>
+</template>
+<template name="sidebar">
+	<div id="sidebar" class="tabbable tabs-left span2">
+		<ul class="nav nav-tabs">
+			{{#each feed}}
+				<li>
+					<a href="#" data-toggle="tab">{{feed_name}}</a>
+				</li>
+			{{/each}}
+		</ul>	
+		<p><button class="btn btn-inverse">Add new feed</button></p>
+	</div>
+</template>	
+<template name="feed">
+	<div class="tab-content span10">
+		<h3 class="well well-small">Feed for: {{current_feed}}</h3>	
+		<ul id="feed" class="accordion">
+			{{#each feed_articles}}
+				<li id="{{article_id}}" class="article">
+				<div class="header-container clearfix">
+					<div class="icons pull-left span1">
+						<p><i class="icon-star-empty"></i></p>
+						<p><i class="icon-share"></i></p>
+					</div>
+					<div class="article_header pull-left span7">
+						<p data-toggle="collapse" data-parent="#feed" data-target="{{article_id}}_t">{{title}}</p>
+						<p><a href="{{url_long}}">{{url_short}}</a>
+					</div>
+					<div class="votes pull-right span2 btn-group btn-group-vertical">
+						<button id="{{article_id}}_vl" class="btn btn-small btn-block" type="button">Worth it<i class="icon-thumbs-up pull-right"></i></button>
+						<button id="{{article_id}}_vi" class="btn btn-small btn-block" type="button">Ignore</button>
+						<button id="{{article_id}}_vd" class="btn btn-small btn-block" type="button">Not Worth it<i class="icon-thumbs-down pull-right"></i></button>
+					</div>
+				</div>
+					<div class="article_text clearfix">
+						<div class="reading_options">									
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#">Text</a></li>
+								<li><a href="#">View on {{feed}}</a></li>
+								<li><a href="#">Load iFrame</a></li>
+							</ul>
+						</div>
+						<div id="{{article_id}}_t" class="text collapse in"></div>
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>
